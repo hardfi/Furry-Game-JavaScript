@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Javascript Furry game</title>
-    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/main.css'>
 
 </head>
 
@@ -125,7 +125,9 @@
 
   <section id='over' class='invisible'>
     <div class="gameover">
-      <p>GAME OVER!</p>
+      <h2>GAME OVER!</h2>
+      <p id="final_score"></p>
+      <input type="button" value="Play again" onClick="window.location.reload()">
     </div>
   </section>
 

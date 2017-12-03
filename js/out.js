@@ -96,11 +96,9 @@ var Game = function() {
   // hitting the wall (or just getting out of the board makes the game end)
   this.gameOver = function() {
     if (this.furry.x < 0  || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9) {
-      clearInterval(this.idSetInterval);
-      document.querySelector('div.coin').classList.remove('coin');
-      document.querySelector('#board').classList.add('invisible');
-      document.querySelector('#score').classList.add('invisible');
       document.querySelector('#over').classList.remove('invisible');
+      document.getElementById('final_score').innerHTML = (`Your final score is ${this.score}`);
+      clearInterval(this.idSetInterval);
 
     }
   }
