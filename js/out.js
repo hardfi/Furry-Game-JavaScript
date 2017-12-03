@@ -97,8 +97,10 @@ var Game = function() {
   this.gameOver = function() {
     if (this.furry.x < 0  || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9) {
       document.querySelector('#over').classList.remove('invisible');
-      document.getElementById('final_score').innerHTML = (`Your final score is ${this.score}`);
+      document.getElementById('final_score').innerHTML = (`Your final score is ${this.score}.`);
       clearInterval(this.idSetInterval);
+      document.querySelector('div.coin').classList.remove('coin');
+      // this.hideVisibleFurry();
 
     }
   }
@@ -137,7 +139,15 @@ newGame.showCoin();
 // and then start animating Furry
 newGame.startGame();
 
-
+// play again button
+document.getElementById('play_again').addEventListener('click', function() {
+   location.reload();
+  // document.querySelector('#over').classList.add('invisible');
+  // var newGame = new Game();
+  // newGame.showFurry();
+  // newGame.showCoin();
+  // newGame.startGame();
+});
 
 
 });
